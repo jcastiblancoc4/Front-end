@@ -1,0 +1,96 @@
+<div class="contenedor container" *ngIf="moto">
+	<h2 class="text-primary titulo">{{titulo}}</h2>
+
+	<div class="alert alert-success w-50" *ngIf="status == 'success'" >
+		Informacion registrada, puedes <a [routerLink]="['/moto',save_moto._id]">verla aqui</a>
+	</div>
+
+	<div class="alert alert-danger w-50" *ngIf="status == 'failed'" >
+		ERROR La informacion no se ha podido registrar.
+	</div>
+
+	<form  #motoForm="ngForm" class="border mt-3 was-validated "  (ngSubmit)="onSubmit(motoForm)">
+
+		<div class="ml-2 mt-2">
+			<label for="nombre">Nombre:</label>
+			<input class="form-control w-50" type="text" name="nombre" #name="ngModel" [(ngModel)]="moto.nombre" required="" />
+			<div class="invalid-feedback">
+         	 Ingrese nombre.
+        	</div>
+		</div>
+
+		<div class="ml-2 mt-2">
+			<label for="marca">Marca:</label>
+			<input class="form-control w-50" type="text" name="marca" #name="ngModel" [(ngModel)]="moto.marca" required/>
+			<div class="invalid-feedback">
+         	 Ingrese marca.
+        	</div>
+		</div>
+
+		<div class="ml-2 mt-2">
+			<label for="precio">Precio:</label>
+			<input class="form-control w-50" type="number" name="precio" #name="ngModel" [(ngModel)]="moto.precio" required/>
+			<div class="invalid-feedback">
+         	 Ingrese precio.
+        	</div>
+        </div>
+
+		<div class="ml-2 mt-2">
+			<label for="cilindraje">Cilindraje:</label>
+			<input class="form-control w-50" type="text" name="cilindraje" #name="ngModel" [(ngModel)]="moto.cilindraje" required/>
+			<div class="invalid-feedback">
+         	 Ingrese cilindraje.
+        	</div>
+        </div>
+
+		<div class="ml-2 mt-2">
+			<label for="peso">Peso:</label>
+			<input class="form-control w-50" type="text" name="peso" #name="ngModel" [(ngModel)]="moto.peso" required/>
+			<div class="invalid-feedback">
+         	 Ingrese peso.
+        	</div>
+        </div>
+
+		<div class="ml-2 mt-2">
+			<label for="potencia">Potencia:</label>
+			<input class="form-control w-50" type="text" name="potencia" #name="ngModel" [(ngModel)]="moto.potencia" required="" />
+			<div class="invalid-feedback">
+         	 Ingrese Potencia.
+        	</div>
+        </div>
+
+		<div class="ml-2 mt-2">
+			<label for="torque">Torque:</label>
+			<input class="form-control w-50" type="text" name="torque" #name="ngModel" [(ngModel)]="moto.torque" required/>
+			<div class="invalid-feedback">
+         	 Ingrese Torque.
+        	</div>
+        </div>
+
+		<div class="ml-2 mt-2">
+			<label for="motor">Motor:</label>
+			<input class="form-control w-50" type="text" name="motor" #name="ngModel" [(ngModel)]="moto.motor" required/>
+			<div class="invalid-feedback">
+         	 Ingrese motor.
+        	</div>
+        </div>
+
+		<div class="ml-2 mt-2">
+			<label for="foto">Imagen:</label><br/>
+			<span class="foto" *ngIf="moto.foto" style="float:none;">
+				<img  class="border" src="{{url+'get-foto/'+moto.foto}}" style="width:100px;" />
+			</span> <br/>
+
+			<input class="form-control-sm" type="file" name="foto" placeholder="Subir imagen" (change)="fileChangeEvent($event)"/>
+		</div>
+
+		<input class="btn btn-outline-primary mb-3 ml-2" type="submit" value="Guardar" [disabled]="!motoForm.form.valid"/>
+
+	</form>
+
+	
+</div>
+
+
+
+

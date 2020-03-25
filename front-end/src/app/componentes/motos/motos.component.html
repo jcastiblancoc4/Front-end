@@ -1,0 +1,15 @@
+<div class="contenedor container ">
+	<h2 class="text-primary titulo">Motos</h2>
+
+<ul class="pt-2 row pl-1">
+	<li *ngFor="let moto of motos" class="col-3 ml-5 mb-4 moto border pb-0">
+		<a [routerLink] = "['/moto', moto._id]"> 
+		<div class="foto">
+			<img  class="border" src="{{url+'get-foto/'+moto.foto}}" *ngIf="moto.foto"/>
+		</div>
+		<h4 class="text-primary">{{moto.nombre}}</h4>
+		</a>
+	</li>
+</ul>
+
+</div>

@@ -1,0 +1,42 @@
+<div class="contenedor container ">
+<h2 class="text-primary titulo">Contacto</h2>
+
+<form  #contactoForm="ngForm" class="border mt-3 was-validated" (ngSubmit)="onSubmit(contactoForm)" >
+	
+	<div class="form-group ml-2 mt-2">
+	<label >Nombre: </label>
+	<input class="form-control w-50" type="text" name="nombre" required="">
+		<div class="invalid-feedback">
+		Ingrese nombre.
+        </div>
+	</div>
+
+	<div class="form-group ml-2 mt-2">
+	<label >Correo electronico: </label>
+	<input class="form-control w-50" type="email" name="correo" required="">
+		<div class="invalid-feedback">
+		Ingrese correo.
+        </div>
+	</div>
+
+
+	<div class="form-group ml-2 mt-2">
+	<label >Celular: </label>
+	<input class="form-control w-50" type="number" name="celular" required="">
+		<div class="invalid-feedback">
+		Ingrese celular.
+        </div>
+	</div>
+
+	<div class="form-group ml-2 mt-2">
+	<label >Mensaje: </label>
+	<textarea class="form-control w-50" type="number" name="celular" required=""></textarea>
+		<div class="invalid-feedback">
+		Ingrese mensaje.
+        </div>
+	</div>
+
+	<input class="btn btn-outline-primary mb-3 ml-2" type="submit" value="Enviar"  [disabled]="!contactoForm.form.valid"/>
+</form>
+
+</div>

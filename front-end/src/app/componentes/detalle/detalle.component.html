@@ -1,0 +1,24 @@
+<div class="contenedor container mt-3 " *ngIf="moto">
+
+<div class="foto row" *ngIf="moto.foto">
+	<img  class="col" src="{{url+'get-foto/'+moto.foto}}" *ngIf="moto.foto"/>
+</div>
+	
+	<div class="data col" >
+	<h2 class="text-danger text-uppercase ">{{moto.marca}} {{moto.nombre}}</h2>
+	<h3>${{moto.precio}}</h3>
+	<h3 class="text-danger">Especificaciones</h3>
+	<p><b>Cilindraje :</b> {{moto.cilindraje}}</p> 
+	<p><b>Peso :</b> {{moto.peso}}</p> 
+	<p><b>Potencia: </b>{{moto.potencia}}</p> 
+	<p><b>Torque: </b>{{moto.torque}}</p>
+	<p><b>Motor: </b>{{moto.motor}}</p>  
+	<p>
+		<a [routerLink]="['/editar', moto._id]" class="btn btn-outline-primary" >Editar</a>
+		<a (click)="deleteMoto(moto._id)" class="btn btn-outline-danger ml-5">Borrar</a> 
+	</p>
+
+	</div>
+
+
+</div>

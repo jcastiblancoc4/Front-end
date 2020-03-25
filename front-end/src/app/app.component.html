@@ -1,0 +1,27 @@
+
+   <!-- <nav class="cabeza__menu row navbar navbar-light "> -->
+<header class="container border cabeza ">
+  	<nav class="navbar navbar-default fixed-top cabeza navbar-light  mt-1 mr-5 ml-5 row">
+      
+      <img class="col-md-1 col " src="../assets/img/logo.PNG" style="width:70px ">
+      
+      <a class="col-md-3 col navbar-brand bg-light btn btn-outline-primary" [routerLink]="['/motos']">MOTOS</a>
+      
+      <a class="col-md-3 col navbar-brand bg-light btn btn-outline-primary" [routerLink]="['/crear-moto']">AGREGAR MOTO</a>
+      
+      <a class="col-md-3 col navbar-brand bg-light btn btn-outline-primary" [routerLink]="['/contacto']">CONTACTO</a>
+    
+    </nav>
+</header>
+ 
+
+<section class="container border text-white w-75 contenedor">
+
+  <router-outlet></router-outlet>
+
+</section>
+
+
+<footer>
+  <h6 class="text-primary border footer">Crud con Angular8, Nodejs y MongoDB</h6>
+</footer>
